@@ -5,11 +5,10 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const NAV_ITEMS = [
-  { label: 'Music',   href: '#music',          external: false },
   { label: 'Dance',   href: '#ecstatic-dance', external: false },
-  { label: 'Studio',  href: '#production',     external: false },
-  { label: 'Qi Arts', href: '#taichi',         external: false },
+  { label: 'Music',   href: '#music',          external: false },
   { label: 'Shows',   href: '#shows',          external: false },
+  { label: 'Qi Arts', href: '#taichi',         external: false },
   { label: 'Booking', href: 'https://docs.google.com/forms/d/e/1FAIpQLSf68m_sjy8yrcOzamk_vD01vrU8edS8zwkHK2ORzU96axC7bw/viewform', external: true },
 ]
 

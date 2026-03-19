@@ -1,19 +1,17 @@
 import { HeroSection } from '@/components/HeroSection'
-import { MusicSection } from '@/components/MusicSection'
 import { EcstaticDanceSection } from '@/components/EcstaticDanceSection'
-import { MusicProductionSection } from '@/components/MusicProductionSection'
-import { TaiChiSection } from '@/components/TaiChiSection'
+import { MusicSection } from '@/components/MusicSection'
 import { ShowsSection } from '@/components/ShowsSection'
+import { TaiChiSection } from '@/components/TaiChiSection'
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
-      <MusicSection />
       <EcstaticDanceSection />
-      <MusicProductionSection />
-      <TaiChiSection />
+      <MusicSection />
       <ShowsSection />
+      <TaiChiSection />
     </main>
   )
 }
