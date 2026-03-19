@@ -3,7 +3,7 @@
 // Three-tier music section per CLAUDE.md spec
 // Tier 1: Spotify (released), Tier 2: Bandcamp (direct support), Tier 3: SoundCloud (live)
 
-import { useState } from 'react'
+import { useState, type ReactElement } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 
@@ -138,7 +138,7 @@ function SoundCloudTier() {
 export function MusicSection() {
   const [active, setActive] = useState<TabId>('spotify')
 
-  const content: Record<TabId, JSX.Element> = {
+  const content: Record<TabId, ReactElement> = {
     spotify: <SpotifyTier />,
     bandcamp: <BandcampTier />,
     soundcloud: <SoundCloudTier />,

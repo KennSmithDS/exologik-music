@@ -122,7 +122,7 @@ Each tier should be visually distinct but cohesive — different card treatments
 This project uses an automated screenshot loop via Puppeteer for visual QA.
 
 **Setup** (run once):
-```bash
+```
 npm install puppeteer
 ```
 
