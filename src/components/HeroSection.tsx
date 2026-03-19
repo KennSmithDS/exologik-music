@@ -164,11 +164,9 @@ export function HeroSection() {
       {/* Center flare — glowing from the FoL origin point */}
       <CenterFlare />
 
-      {/* Content — starts just below the FoL center line */}
-      <div
-        className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center text-center px-6 z-20"
-        style={{ top: '47%', maxWidth: 600, width: '100%' }}
-      >
+      {/* Content — flex-centered so email form is always visible on any screen height */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pt-14 pb-8">
+        <div className="flex flex-col items-center w-full" style={{ maxWidth: 600 }}>
         {/* Embossed logo — large, right above tagline */}
         <motion.div
           initial="hidden"
@@ -187,7 +185,7 @@ export function HeroSection() {
             width={440}
             height={440}
             priority
-            className="w-[240px] sm:w-[320px] md:w-[400px] h-auto select-none"
+            className="w-[82vw] sm:w-[340px] md:w-[420px] max-w-[420px] h-auto select-none"
           />
         </motion.div>
 
@@ -294,6 +292,7 @@ export function HeroSection() {
             </form>
           )}
         </motion.div>
+        </div>
       </div>
 
       {/* Bottom vignette */}

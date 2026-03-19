@@ -62,8 +62,8 @@ export function TaiChiSection() {
                 {p.title}
               </h3>
               <p
-                className="text-sm leading-relaxed"
-                style={{ color: 'rgba(232,223,245,0.60)', fontFamily: 'Cormorant Garamond, serif' }}
+                className="text-base leading-relaxed"
+                style={{ color: 'rgba(232,223,245,0.65)', fontFamily: 'Cormorant Garamond, serif' }}
               >
                 {p.body}
               </p>
