@@ -3,12 +3,12 @@ import './globals.css'
 import { NavBar } from '@/components/NavBar'
 
 export const metadata: Metadata = {
-  title: 'Exologik — Ritual DJ & Transformational Guide',
+  title: 'Exologik — Ritual DJ & Multi-instrumentalist',
   description:
-    'Ritual DJ & Transformational Guide | Sonic Dance Ceremony | Music Production | Tai Chi Arts. Conscious global bass, organic tribal house, and downtempo from Flagstaff, AZ.',
+    'Ritual DJ & Multi-instrumentalist | Sonic Dance Ceremony | Music Production | Tai Chi Arts. Conscious global bass, organic tribal house, and downtempo from Flagstaff, AZ.',
   openGraph: {
     title: 'Exologik',
-    description: 'Ritual DJ & Transformational Guide | Sonic Dance Ceremony',
+    description: 'Ritual DJ & Multi-instrumentalist | Sonic Dance Ceremony',
     images: ['/brand/embossed-logo.png'],
   },
 }

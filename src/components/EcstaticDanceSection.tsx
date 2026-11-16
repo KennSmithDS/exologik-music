@@ -1,15 +1,26 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
+import { InstrumentCarousel } from './InstrumentCarousel'
 
-const highlights = [
-  { stat: '12+', label: 'Festivals in 2025' },
-  { stat: '∞',  label: 'Hours of Ceremony' },
-  { stat: '4+',  label: 'Live Instruments'   },
+// "Played with" = direct collaborations (featured, B2B, opened for, co-produced).
+// "Shared the stage with" = same stage, same event, same night — not just the same festival lineup.
+const artistGroups = [
+  {
+    heading: 'Played With',
+    names: ['DTO', 'Sudakra', 'Random Rab', 'Khem Reyall'],
+    color: '#f0a8d8',
+    bg: 'rgba(240,168,216,0.10)',
+    border: 'rgba(240,168,216,0.32)',
+  },
+  {
+    heading: 'Shared the Stage With',
+    names: ['Liquid Bloom', 'David Starfire', 'Akriza', 'Mah Ze Tar', 'Snow Raven', 'SWAYLO'],
+    color: '#c084fc',
+    bg: 'rgba(123,79,168,0.15)',
+    border: 'rgba(192,132,252,0.25)',
+  },
 ]
-
-const sharedStages = ['Liquid Bloom', 'David Starfire', 'Akriza']
 
 export function EcstaticDanceSection() {
   return (
@@ -26,39 +37,45 @@ export function EcstaticDanceSection() {
           <div>
             <p className="text-base sm:text-lg leading-relaxed mb-6"
               style={{ color: 'rgba(232,223,245,0.75)', fontFamily: 'Cormorant Garamond, serif' }}>
-              Exologik weaves conscious global bass, organic tribal house, and downtempo into live
-              ceremonial dance journeys. Each set layers handpan, flute, charango, and voice over
-              meticulously crafted production — bridging ancient sound and modern bass culture.
+              Ancient-future soundscapes where circuitry meets spirit. Exologik blends global bass,
+              tribal rhythms, psychedelic textures, and meditative ambience into immersive journeys
+              designed to move the body, open the heart, and awaken the inner world — with live
+              handpan, flute, and charango woven through every set as he reads the room in real time.
             </p>
             <p className="text-base sm:text-lg leading-relaxed mb-8"
               style={{ color: 'rgba(232,223,245,0.60)', fontFamily: 'Cormorant Garamond, serif' }}>
-              Born from a pivotal winter solstice 2023 experience, Exologik debuted across 12+
-              festivals in 2025, sharing stages with some of the genre&rsquo;s most respected voices.
+              Born from a pivotal winter solstice in 2023, Exologik has carried the ceremony to 17+
+              festivals — from the Sensory Chamber at Iceland Eclipse to the beach stage at Unison
+              Festival and a sunset set at Southwest Flow Festival.
             </p>
 
-            {/* Shared stages */}
-            <div className="mb-8">
-              <p className="mb-3 text-xs uppercase tracking-[0.24em]"
-                style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
-                Shared Stages With
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {sharedStages.map(name => (
-                  <span
-                    key={name}
-                    className="px-3 py-1 rounded-full text-sm"
-                    style={{
-                      background: 'rgba(123,79,168,0.15)',
-                      border: '1px solid rgba(192,132,252,0.25)',
-                      color: '#c084fc',
-                      fontFamily: 'Cormorant Garamond, serif',
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+            {/* Collaborators & shared stages */}
+            <div className="mb-8 flex flex-col gap-6">
+              {artistGroups.map(group => (
+                <div key={group.heading}>
+                  <p className="mb-3 text-xs uppercase tracking-[0.24em]"
+                    style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
+                    {group.heading}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.names.map(name => (
+                      <span
+                        key={name}
+                        className="px-3 py-1 rounded-full text-sm"
+                        style={{
+                          background: group.bg,
+                          border: `1px solid ${group.border}`,
+                          color: group.color,
+                          fontFamily: 'Cormorant Garamond, serif',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Book CTA */}
@@ -79,68 +96,13 @@ export function EcstaticDanceSection() {
             </a>
           </div>
 
-          {/* Right: stats + instruments */}
-          <div className="flex flex-col gap-6">
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              {highlights.map(h => (
-                <div
-                  key={h.stat}
-                  className="flex flex-col items-center py-5 rounded-xl"
-                  style={{
-                    background: 'rgba(13,8,32,0.65)',
-                    border: '1px solid rgba(74,127,168,0.18)',
-                  }}
-                >
-                  <span
-                    className="text-3xl sm:text-4xl font-light mb-1"
-                    style={{ color: '#6db3d4', fontFamily: 'Cinzel, serif' }}
-                  >
-                    {h.stat}
-                  </span>
-                  <span
-                    className="text-xs text-center leading-tight"
-                    style={{ color: 'rgba(232,223,245,0.5)', fontFamily: 'Cormorant Garamond, serif' }}
-                  >
-                    {h.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Live instruments card */}
-            <div
-              className="p-6 rounded-xl"
-              style={{
-                background: 'rgba(13,8,32,0.65)',
-                border: '1px solid rgba(74,127,168,0.18)',
-              }}
-            >
-              <p className="mb-4 text-xs uppercase tracking-[0.24em]"
-                style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
-                Live Instruments
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Handpan', 'Flute', 'Charango', 'Voice'].map(inst => (
-                  <span
-                    key={inst}
-                    className="px-3 py-1.5 rounded-lg text-sm italic"
-                    style={{
-                      background: 'rgba(74,127,168,0.12)',
-                      border: '1px solid rgba(74,127,168,0.22)',
-                      color: '#6db3d4',
-                      fontFamily: 'Cormorant Garamond, serif',
-                    }}
-                  >
-                    {inst}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {/* Right: instrument carousel */}
+          <div className="flex flex-col gap-4">
+            <InstrumentCarousel />
 
             {/* Based in */}
             <p className="text-sm italic text-right"
-              style={{ color: 'rgba(232,223,245,0.35)', fontFamily: 'Cormorant Garamond, serif' }}>
+              style={{ color: 'rgba(232,223,245,0.55)', fontFamily: 'Cormorant Garamond, serif' }}>
               Based in Flagstaff, AZ
             </p>
           </div>

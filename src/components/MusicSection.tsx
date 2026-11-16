@@ -8,7 +8,7 @@ import { useState, type ReactElement } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 
-const genres = ['Conscious Global Bass', 'Organic Tribal House', 'Downtempo']
+const genres = ['Conscious Global Bass', 'Downtempo']
 
 const TABS = [
   { id: 'bandcamp',   label: 'Support',  eyebrow: 'Direct Support'    },
@@ -28,16 +28,23 @@ function BandcampTier() {
       <div className="w-full max-w-xl flex flex-col gap-4">
         {[
           {
-            label: 'Exologik on Bandcamp',
-            sublabel: 'Artist-direct — singles & releases straight from the source',
-            href: 'https://exologik.bandcamp.com',
-            accent: '#6db3d4',
+            label: 'Baile de Alkemia',
+            sublabel: 'Exologik & Khem Reyall ft. DTO — new on Resueno',
+            href: 'https://resueno.bandcamp.com/track/exologik-khem-reyall-baile-de-alkemia-ft-dto',
+            accent: '#f0a8d8',
+            badge: 'New Release',
           },
           {
             label: 'Reincarnation — Full Album',
-            sublabel: 'Via High Vibe Records',
-            href: 'https://highviberecords.bandcamp.com/album/reincarnation',
+            sublabel: 'The debut album — buy the full record directly from Exologik',
+            href: 'https://exologik.bandcamp.com/album/reincarnation',
             accent: '#c084fc',
+          },
+          {
+            label: 'Exologik on Bandcamp',
+            sublabel: 'Browse every release and follow for new drops',
+            href: 'https://exologik.bandcamp.com',
+            accent: '#6db3d4',
           },
         ].map(l => (
           <a
@@ -51,12 +58,25 @@ function BandcampTier() {
             onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(74,127,168,0.20)' }}
           >
             <div>
+              {'badge' in l && l.badge && (
+                <span className="inline-block mb-1.5 px-2 py-0.5 rounded-full uppercase"
+                  style={{
+                    fontFamily: 'Cinzel, serif',
+                    fontSize: '0.6rem',
+                    letterSpacing: '0.18em',
+                    color: '#f0a8d8',
+                    background: 'rgba(240,168,216,0.10)',
+                    border: '1px solid rgba(240,168,216,0.35)',
+                  }}>
+                  {l.badge}
+                </span>
+              )}
               <p className="font-normal mb-0.5"
                 style={{ color: l.accent, fontFamily: 'Cinzel, serif', fontSize: '0.9rem', letterSpacing: '0.05em' }}>
                 {l.label}
               </p>
               <p className="text-sm italic"
-                style={{ color: 'rgba(232,223,245,0.48)', fontFamily: 'Cormorant Garamond, serif' }}>
+                style={{ color: 'rgba(232,223,245,0.60)', fontFamily: 'Cormorant Garamond, serif' }}>
                 {l.sublabel}
               </p>
             </div>
@@ -193,6 +213,15 @@ export function MusicSection() {
               charango, and voice into meticulously crafted soundscapes. Born from a transformative
               winter solstice experience in 2023, it channels ancient resonance into modern form.
             </p>
+            <a
+              href="https://exologik.bandcamp.com/album/reincarnation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mb-5 text-sm uppercase tracking-widest transition-colors duration-300 hover:text-white"
+              style={{ color: '#c084fc', fontFamily: 'Cinzel, serif' }}
+            >
+              Get the album on Bandcamp →
+            </a>
             <div className="flex flex-wrap gap-2">
               {genres.map(g => (
                 <span

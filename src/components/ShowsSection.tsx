@@ -3,34 +3,43 @@
 // Live Performances section — upcoming + scrollable past shows log
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 
-const UPCOMING = [
-  { date: 'March 28, 2026',  event: 'Mosaic Preparty',       venue: 'Monte Vista Lounge',   location: 'Flagstaff, AZ' },
-  { date: 'May 1, 2026',     event: 'Mosaic Sunset DJ Set',  venue: 'Gateway Ranch',         location: 'Flagstaff, AZ' },
-  { date: 'May 21, 2026',    event: 'Posse Ecstatic Dance',  venue: 'Posse Grounds Park',    location: 'Sedona, AZ' },
+type Show = { date: string; event: string; venue?: string; location?: string; note?: string }
+
+const UPCOMING: Show[] = [
+  { date: 'December 4, 2026',  event: 'Art Basel Weekend',              note: 'Sharing the stage with Wildtide',        location: 'Boulder, CO' },
+  { date: 'December 12, 2026', event: 'Resonance: Chrysalis',           note: 'Sharing the stage with Arboreal & TUFA', venue: 'HumanKind Center', location: 'Sedona, AZ' },
 ]
 
-const PAST = [
-  { date: 'Mar 5, 2026',   event: 'Wub Wednesday',                venue: 'Yucca North',          location: 'Flagstaff, AZ' },
+const PAST: Show[] = [
+  { date: 'Oct 9, 2026',   event: 'Downtempo Journey',            note: 'Opening for Random Rab',       venue: 'HumanKind Center',     location: 'Sedona, AZ' },
+  { date: 'Oct 8, 2026',   event: 'Posse Ecstatic Dance',         venue: 'Posse Grounds Park',   location: 'Sedona, AZ' },
+  { date: 'Jan – Oct 2026', event: 'Wub Wednesday',                note: 'Resident DJ',                  venue: 'Yucca North → Monte Vista Cocktail Lounge', location: 'Flagstaff, AZ' },
+  { date: 'Sep 18, 2026',  event: 'Southwest Flow Festival',      note: 'Sunset set',                   venue: 'Gateway Ranch',        location: 'Flagstaff, AZ' },
+  { date: 'Sep 12, 2026',  event: 'Unison Festival',              note: 'Featured performance with DTO on the beach stage', venue: 'Tico Time Resort', location: 'Aztec, NM' },
+  { date: 'Sep 5, 2026',   event: 'Una Familia Sanctuary',        note: 'B2B with Sudakra', location: 'Taos, NM' },
+  { date: 'Aug 14, 2026',  event: 'Iceland Eclipse',              note: 'Sensory Chamber pop-up stage', location: 'Iceland' },
+  { date: 'Jun 13, 2026',  event: 'June Jam',                     note: '3-hour set',                   venue: 'Playa Ponderosa',      location: 'Flagstaff, AZ' },
+  { date: 'May 21, 2026',  event: 'Posse Ecstatic Dance',         venue: 'Posse Grounds Park',   location: 'Sedona, AZ' },
+  { date: 'May 1, 2026',   event: 'The Mosaic Gathering',         venue: 'Gateway Ranch',        location: 'Flagstaff, AZ' },
+  { date: 'Mar 28, 2026',  event: 'Mosaic Preparty',              venue: 'Monte Vista Cocktail Lounge',   location: 'Flagstaff, AZ' },
   { date: 'Feb 19, 2026',  event: 'Posse Ecstatic Dance',         venue: 'Posse Grounds Park',   location: 'Sedona, AZ' },
-  { date: 'Feb 18, 2026',  event: 'Wub Wednesday',                venue: 'Yucca North',          location: 'Flagstaff, AZ' },
-  { date: 'Feb 4, 2026',   event: 'Wub Wednesday',                venue: 'Yucca North',          location: 'Flagstaff, AZ' },
   { date: 'Jan 23, 2026',  event: 'Gem & Jam DJ Competition',     venue: "Gentle Ben's",         location: 'Tucson, AZ' },
-  { date: 'Jan 21, 2026',  event: 'Wub Wednesday',                venue: 'Yucca North',          location: 'Flagstaff, AZ' },
   { date: 'Jan 15, 2026',  event: 'Posse Ecstatic Dance',         venue: 'Posse Grounds Park',   location: 'Sedona, AZ' },
-  { date: 'Jan 8, 2026',   event: 'Wub Wednesday',                venue: 'Yucca North',          location: 'Flagstaff, AZ' },
-  { date: 'Dec 31, 2025',  event: "New Year's Eve Opener",        venue: 'HumanKind Center',     location: 'Flagstaff, AZ' },
+  { date: 'Dec 31, 2025',  event: "New Year's Eve Opener",        venue: 'HumanKind Center',     location: 'Sedona, AZ' },
   { date: 'Nov 23, 2025',  event: 'Ecstatic Harmony',             venue: 'Harmony Village',      location: 'Tucson, AZ' },
   { date: 'Sep 19, 2025',  event: 'Southwest Flow Festival',      venue: 'Gateway Ranch',        location: 'Flagstaff, AZ' },
   { date: 'Aug 9, 2025',   event: 'Create Infinite Elements',     venue: 'Catoosa Event Center', location: 'Catoosa, TN' },
   { date: 'Aug 1, 2025',   event: 'Vibe Fest',                    venue: 'Hudson Valley Resort', location: 'New York, NY' },
-  { date: 'Jul 20, 2025',  event: 'RE:Vibe Coconino Afterparty',  venue: 'Humankind Center',     location: 'Flagstaff, AZ' },
-  { date: 'Jul 15, 2025',  event: 'Opener for Sudakra',           venue: 'Humankind Center',     location: 'Flagstaff, AZ' },
+  { date: 'Jul 20, 2025',  event: 'RE:Vibe Coconino Afterparty',  venue: 'HumanKind Center',     location: 'Sedona, AZ' },
+  { date: 'Jul 15, 2025',  event: 'Opener for Sudakra',           venue: 'HumanKind Center',     location: 'Sedona, AZ' },
   { date: 'Jun 19, 2025',  event: 'Portal Takeover',              venue: 'Meow Wolf',            location: 'Denver, CO' },
   { date: 'Apr 5, 2025',   event: 'Opener for Akal Dub',          venue: 'Yucca North',          location: 'Flagstaff, AZ' },
   { date: 'Mar 15, 2025',  event: 'Grizzly Get Down',             venue: 'Yucca North',          location: 'Flagstaff, AZ' },
   { date: 'Feb 16, 2025',  event: 'Aquarian Visions',             venue: 'Harmony Village',      location: 'Flagstaff, AZ' },
   { date: 'Dec 14, 2024',  event: 'Woodland Wobble',              venue: 'Yucca North',          location: 'Flagstaff, AZ' },
 ]
+
+const place = (s: Show) => [s.venue, s.location].filter(Boolean).join(' · ')
 
 export function ShowsSection() {
   return (
@@ -74,17 +83,27 @@ export function ShowsSection() {
                 >
                   {show.date}
                 </span>
-                <span
-                  className="text-base font-medium flex-1"
-                  style={{ color: '#e8dff5', fontFamily: 'Cormorant Garamond, serif' }}
-                >
-                  {show.event}
+                <span className="flex-1 flex flex-col">
+                  <span
+                    className="text-base font-medium"
+                    style={{ color: '#e8dff5', fontFamily: 'Cormorant Garamond, serif' }}
+                  >
+                    {show.event}
+                  </span>
+                  {show.note && (
+                    <span
+                      className="text-sm italic"
+                      style={{ color: '#f0a8d8', fontFamily: 'Cormorant Garamond, serif' }}
+                    >
+                      {show.note}
+                    </span>
+                  )}
                 </span>
                 <span
                   className="text-sm"
                   style={{ color: 'rgba(109,179,212,0.65)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
                 >
-                  {show.venue} · {show.location}
+                  {place(show)}
                 </span>
               </div>
             ))}
@@ -128,12 +147,17 @@ export function ShowsSection() {
                   style={{ color: 'rgba(232,223,245,0.80)', fontFamily: 'Cormorant Garamond, serif' }}
                 >
                   {show.event}
+                  {show.note && (
+                    <span className="italic" style={{ color: 'rgba(240,168,216,0.80)' }}>
+                      {' '}— {show.note}
+                    </span>
+                  )}
                 </span>
                 <span
                   className="text-sm"
                   style={{ color: 'rgba(109,179,212,0.45)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
                 >
-                  {show.venue} · {show.location}
+                  {place(show)}
                 </span>
               </div>
             ))}
