@@ -1,7 +1,7 @@
 # CLAUDE.md — Exologik Artist Site
 
 ## Project Overview
-This is the official artist website for **Exologik** (Kendall), a conscious global bass / organic tribal house / downtempo producer and live performer based in Flagstaff, AZ. The site's primary goals are:
+This is the official artist website for **Exologik** (Kendall), a conscious global bass / organic tribal house / downtempo producer and live performer based in Boulder, CO (moved from Flagstaff, AZ in Nov 2026). The site's primary goals are:
 1. **Fan community + email list growth** — capture engaged listeners who want to go deeper
 2. **Music showcase** — tiered media player experience across Spotify, Bandcamp, and SoundCloud
 
@@ -215,7 +215,7 @@ When integrating a 21st.dev component, note the source URL in a comment at the t
 
 **Live instruments**: Handpan, flute (multiple registers), charango, voice
 
-**Based in**: Flagstaff, AZ
+**Based in**: Boulder, CO (previously Flagstaff, AZ — past show venues there stay as-is)
 
 **Social & platform links:**
 | Platform | URL |

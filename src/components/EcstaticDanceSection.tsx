@@ -103,7 +103,7 @@ export function EcstaticDanceSection() {
             {/* Based in */}
             <p className="text-sm italic text-right"
               style={{ color: 'rgba(242,228,200,0.55)', fontFamily: 'Cormorant Garamond, serif' }}>
-              Based in Flagstaff, AZ
+              Based in Boulder, CO
             </p>
           </div>
         </div>

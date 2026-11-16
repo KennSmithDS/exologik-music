@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.exologik.live'),
   title: 'Exologik — Ritual DJ & Multi-instrumentalist',
   description:
-    'Ritual DJ & Multi-instrumentalist | Sonic Dance Ceremony | Music Production | Tai Chi Arts. Conscious global bass and downtempo with live handpan, flute, charango and voice — from Flagstaff, AZ.',
+    'Ritual DJ & Multi-instrumentalist | Sonic Dance Ceremony | Music Production | Tai Chi Arts. Conscious global bass and downtempo with live handpan, flute, charango and voice — based in Boulder, CO.',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
