@@ -8,7 +8,7 @@ import { useState, type ReactElement } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 
-const genres = ['Conscious Global Bass', 'Organic Tribal House', 'Downtempo']
+const genres = ['Conscious Global Bass', 'Downtempo']
 
 const TABS = [
   { id: 'bandcamp',   label: 'Support',  eyebrow: 'Direct Support'    },
@@ -36,13 +36,13 @@ function BandcampTier() {
           },
           {
             label: 'Reincarnation — Full Album',
-            sublabel: 'Direct from the artist on Bandcamp',
+            sublabel: 'The debut album — buy the full record directly from Exologik',
             href: 'https://exologik.bandcamp.com/album/reincarnation',
             accent: '#c084fc',
           },
           {
             label: 'Exologik on Bandcamp',
-            sublabel: 'Artist-direct — singles & releases straight from the source',
+            sublabel: 'Browse every release and follow for new drops',
             href: 'https://exologik.bandcamp.com',
             accent: '#6db3d4',
           },

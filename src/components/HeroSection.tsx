@@ -198,7 +198,7 @@ export function HeroSection() {
           className="mb-1 uppercase text-xs sm:text-sm"
           style={{ color: '#6db3d4', fontFamily: 'Cinzel, serif', letterSpacing: '0.22em' }}
         >
-          Ritual DJ &amp; Transformational Guide
+          Ritual DJ &amp; Multi-instrumentalist
         </motion.p>
 
         {/* Secondary tagline */}

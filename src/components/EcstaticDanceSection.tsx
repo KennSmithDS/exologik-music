@@ -3,7 +3,24 @@
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 import { InstrumentCarousel } from './InstrumentCarousel'
 
-const sharedStages = ['Liquid Bloom', 'David Starfire', 'DTO', 'Random Rab', 'Sudakra', 'Akriza']
+// "Played with" = direct collaborations (featured, B2B, opened for, co-produced).
+// "Shared the stage with" = same stage, same event, same night — not just the same festival lineup.
+const artistGroups = [
+  {
+    heading: 'Played With',
+    names: ['DTO', 'Sudakra', 'Random Rab', 'Khem Reyall'],
+    color: '#f0a8d8',
+    bg: 'rgba(240,168,216,0.10)',
+    border: 'rgba(240,168,216,0.32)',
+  },
+  {
+    heading: 'Shared the Stage With',
+    names: ['Liquid Bloom', 'David Starfire', 'Akriza', 'Mah Ze Tar', 'Snow Raven', 'SWAYLO'],
+    color: '#c084fc',
+    bg: 'rgba(123,79,168,0.15)',
+    border: 'rgba(192,132,252,0.25)',
+  },
+]
 
 export function EcstaticDanceSection() {
   return (
@@ -27,34 +44,38 @@ export function EcstaticDanceSection() {
             </p>
             <p className="text-base sm:text-lg leading-relaxed mb-8"
               style={{ color: 'rgba(232,223,245,0.60)', fontFamily: 'Cormorant Garamond, serif' }}>
-              Born from a pivotal winter solstice in 2023, the project debuted across 12+ festivals
-              in 2025 — then carried the ceremony to Iceland Eclipse, the beach stage at Unison
-              Festival, and a sunset set at Southwest Flow Festival in 2026.
+              Born from a pivotal winter solstice in 2023, Exologik has carried the ceremony to 17+
+              festivals — from the Sensory Chamber at Iceland Eclipse to the beach stage at Unison
+              Festival and a sunset set at Southwest Flow Festival.
             </p>
 
-            {/* Shared stages */}
-            <div className="mb-8">
-              <p className="mb-3 text-xs uppercase tracking-[0.24em]"
-                style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
-                Shared Stages With
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {sharedStages.map(name => (
-                  <span
-                    key={name}
-                    className="px-3 py-1 rounded-full text-sm"
-                    style={{
-                      background: 'rgba(123,79,168,0.15)',
-                      border: '1px solid rgba(192,132,252,0.25)',
-                      color: '#c084fc',
-                      fontFamily: 'Cormorant Garamond, serif',
-                      fontStyle: 'italic',
-                    }}
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+            {/* Collaborators & shared stages */}
+            <div className="mb-8 flex flex-col gap-6">
+              {artistGroups.map(group => (
+                <div key={group.heading}>
+                  <p className="mb-3 text-xs uppercase tracking-[0.24em]"
+                    style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
+                    {group.heading}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.names.map(name => (
+                      <span
+                        key={name}
+                        className="px-3 py-1 rounded-full text-sm"
+                        style={{
+                          background: group.bg,
+                          border: `1px solid ${group.border}`,
+                          color: group.color,
+                          fontFamily: 'Cormorant Garamond, serif',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
 
             {/* Book CTA */}

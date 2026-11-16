@@ -64,9 +64,9 @@ Always use the **white vector logo** for nav and footer. Use the **embossed logo
       loading="lazy"></iframe>
     ```
   - Bandcamp: two separate links/embeds:
-    1. **Label's copy of Reincarnation**: `https://highviberecords.bandcamp.com/album/reincarnation` — link for album purchase
+    1. **Reincarnation (artist-distributed)**: `https://exologik.bandcamp.com/album/reincarnation` — link for album purchase (artist holds distribution rights; do not link the High Vibe label page)
     2. **Artist's own Bandcamp**: `https://exologik.bandcamp.com` — direct artist support, standalone tracks
-    - Note: *Reincarnation* full album embed TBD pending label contract confirmation. Use the High Vibe link in the meantime.
+    3. **New release on Resueno**: `https://resueno.bandcamp.com/track/exologik-khem-reyall-baile-de-alkemia-ft-dto` — *Baile de Alkemia* (Exologik & Khem Reyall ft. DTO)
   - SoundCloud: use this exact embed for the featured live set (Southwest Flow Fest 9.20.2025):
     ```html
     <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
@@ -104,7 +104,8 @@ Build a **three-tier music section** that educates visitors on where to engage:
 
 ### Tier 2 — Direct Support (Bandcamp)
 - Link card (not embed) pointing to `https://exologik.bandcamp.com` for artist-direct purchases
-- Secondary link to `https://highviberecords.bandcamp.com/album/reincarnation` for the full album
+- Secondary link to `https://exologik.bandcamp.com/album/reincarnation` for the full album
+- New-release card (top of list) for *Baile de Alkemia* on Resueno
 - Framing copy: "Support the artist directly"
 - Note: "Caught Up on an Emotion" single is available on the artist Bandcamp now. Full album embed TBD.
 
@@ -202,10 +203,10 @@ When integrating a 21st.dev component, note the source URL in a comment at the t
 ## Content Reference
 
 **Artist tagline** (use for hero and meta description):
-> Ritual DJ & Transformational Guide | Sonic Dance Ceremony | Music Production | Tai Chi Arts
+> Ritual DJ & Multi-instrumentalist | Sonic Dance Ceremony | Music Production | Tai Chi Arts
 
 **Artist bio** (use for about section):
-> Exologik blends conscious global bass, organic tribal house, and downtempo with live handpan, flute, charango, and voice. Born from a pivotal winter solstice 2023 experience, the project weaves ancient sound with modern production — debuting at 12+ festivals in 2025 and sharing stages with Liquid Bloom, David Starfire, and Akriza.
+> Exologik blends conscious global bass, organic tribal house, and downtempo with live handpan, flute, charango, and voice. Born from a pivotal winter solstice 2023 experience, the project weaves ancient sound with modern production — playing 17+ festivals since 2025 and sharing stages with Liquid Bloom, David Starfire, and Akriza.
 
 **Released album**: *Reincarnation* — High Vibe Records, February 2025
 
@@ -221,7 +222,8 @@ When integrating a 21st.dev component, note the source URL in a comment at the t
 | YouTube | `https://www.youtube.com/@ExologikMusic` |
 | SoundCloud | `https://soundcloud.com/exologik` |
 | Bandcamp (artist) | `https://exologik.bandcamp.com` |
-| Bandcamp (album via label) | `https://highviberecords.bandcamp.com/album/reincarnation` |
+| Bandcamp (Reincarnation) | `https://exologik.bandcamp.com/album/reincarnation` |
+| Bandcamp (Baile de Alkemia, Resueno) | `https://resueno.bandcamp.com/track/exologik-khem-reyall-baile-de-alkemia-ft-dto` |
 | Linktree | `https://linktr.ee/exologik` |
 | Booking form | `https://docs.google.com/forms/d/e/1FAIpQLSf68m_sjy8yrcOzamk_vD01vrU8edS8zwkHK2ORzU96axC7bw/viewform` |
 | Email | `exologikmusic@gmail.com` |
