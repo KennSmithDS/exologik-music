@@ -9,15 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette from Reincarnation album art
-        cosmos: {
-          black: '#05030f',
-          indigo: '#0d0820',
-          'steel-blue': '#4a7fa8',
-          'ice-blue': '#6db3d4',
-          violet: '#7b4fa8',
-          'cosmic-violet': '#c084fc',
-          'lotus-pink': '#f0a8d8',
+        // Brand palette — sunset (Posse flyer + Sedona sunset)
+        sunset: {
+          umber: '#120b09',
+          clay: '#22150f',
+          bronze: '#c98a4b',
+          gold: '#e6c27a',
+          'red-rock': '#b8542e',
+          ember: '#f0a05a',
+          'dusk-peach': '#f5b38a',
+          sandstone: '#f2e4c8',
         },
       },
       fontFamily: {

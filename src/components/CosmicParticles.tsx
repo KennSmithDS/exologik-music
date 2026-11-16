@@ -18,11 +18,11 @@ interface Particle {
 }
 
 const COLORS = [
-  'rgba(74, 127, 168,',   // steel-blue
-  'rgba(109, 179, 212,',  // ice-blue
-  'rgba(123, 79, 168,',   // cosmic-violet
-  'rgba(192, 132, 252,',  // lighter violet
-  'rgba(240, 168, 216,',  // lotus-pink (rare)
+  'rgba(201,138,75,',   // steel-blue
+  'rgba(230,194,122,',  // ice-blue
+  'rgba(184,84,46,',   // cosmic-violet
+  'rgba(240,160,90,',  // lighter violet
+  'rgba(245,179,138,',  // lotus-pink (rare)
 ]
 
 export function CosmicParticles() {

@@ -5,12 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --cosmos-black: #05030f;
-  --cosmos-indigo: #0d0820;
-  --steel-blue: #4a7fa8;
-  --ice-blue: #6db3d4;
-  --cosmic-violet: #7b4fa8;
-  --lotus-pink: #f0a8d8;
+  /* Sunset palette — from the Posse Ecstatic Dance flyer + Sedona sunset */
+  --umber: #120b09;      /* page ground */
+  --clay: #22150f;       /* surfaces */
+  --bronze: #c98a4b;     /* eyebrows, borders */
+  --gold: #e6c27a;       /* headings, labels, links */
+  --red-rock: #b8542e;   /* secondary accent */
+  --ember: #f0a05a;      /* CTAs */
+  --dusk-peach: #f5b38a; /* highlights */
+  --sandstone: #f2e4c8;  /* text */
 }
 
 * {
@@ -22,8 +25,8 @@ html {
 }
 
 body {
-  background-color: var(--cosmos-black);
-  color: #e8dff5;
+  background-color: var(--umber);
+  color: var(--sandstone);
   font-family: 'Cormorant Garamond', serif;
   overflow-x: hidden;
 }
@@ -38,4 +41,40 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   opacity: 0.035;
   background-size: 200px 200px;
+}
+
+/* Gold lettering — matches the gold embossed logo (headings) */
+.text-gold {
+  color: #e6c27a;
+  background: linear-gradient(180deg, #f8dea0 0%, #e6c27a 45%, #c98a4b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft photo fades — photos dissolve into the page instead of hard frames */
+.fade-portrait-side-right {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 40%, transparent 100%);
+}
+.fade-portrait-side {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 40%, transparent 100%);
+}
+@media (min-width: 1024px) {
+  .fade-portrait-side {
+    -webkit-mask-image: radial-gradient(ellipse 80% 62% at 32% 44%, #000 38%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 62% at 32% 44%, #000 38%, transparent 100%);
+  }
+  /* Rectangular fade (no oval): left edge dissolves toward the text, top and bottom into the page */
+  .fade-portrait-side-right {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, #000 42%),
+      linear-gradient(to bottom, transparent 0%, #000 14%, #000 62%, transparent 96%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, #000 42%),
+      linear-gradient(to bottom, transparent 0%, #000 14%, #000 62%, transparent 96%);
+    mask-composite: intersect;
+  }
 }

@@ -60,9 +60,9 @@ export function InstrumentCarousel() {
         className="relative w-full overflow-hidden rounded-2xl"
         style={{
           aspectRatio: '4 / 5',
-          background: '#0d0820',
-          border: '1px solid rgba(74,127,168,0.22)',
-          boxShadow: '0 0 70px rgba(74,127,168,0.22), 0 0 28px rgba(123,79,168,0.18)',
+          background: '#22150f',
+          border: '1px solid rgba(201,138,75,0.22)',
+          boxShadow: '0 0 70px rgba(201,138,75,0.22), 0 0 28px rgba(184,84,46,0.18)',
         }}
         role="region"
         aria-roledescription="carousel"
@@ -95,7 +95,7 @@ export function InstrumentCarousel() {
           aria-hidden="true"
           style={{
             background:
-              'linear-gradient(to top, rgba(5,3,15,0.92) 0%, rgba(5,3,15,0.25) 38%, transparent 60%), radial-gradient(ellipse at 50% 0%, rgba(123,79,168,0.18), transparent 60%)',
+              'linear-gradient(to top, rgba(18,11,9,0.92) 0%, rgba(18,11,9,0.25) 38%, transparent 60%), radial-gradient(ellipse at 50% 0%, rgba(184,84,46,0.18), transparent 60%)',
             mixBlendMode: 'normal',
           }}
         />
@@ -110,7 +110,7 @@ export function InstrumentCarousel() {
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.8, ease }}
               className="uppercase"
-              style={{ color: '#e8dff5', fontFamily: 'Cinzel, serif', letterSpacing: '0.24em', fontSize: '0.95rem' }}
+              style={{ color: '#f2e4c8', fontFamily: 'Cinzel, serif', letterSpacing: '0.24em', fontSize: '0.95rem' }}
               aria-live="polite"
             >
               {current.instrument}
@@ -118,7 +118,7 @@ export function InstrumentCarousel() {
           </AnimatePresence>
           <span
             className="text-xs tabular-nums"
-            style={{ color: 'rgba(232,223,245,0.55)', fontFamily: 'Cinzel, serif', letterSpacing: '0.12em' }}
+            style={{ color: 'rgba(242,228,200,0.55)', fontFamily: 'Cinzel, serif', letterSpacing: '0.12em' }}
           >
             {String(index + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}
           </span>
@@ -135,9 +135,9 @@ export function InstrumentCarousel() {
             aria-label={a.label}
             className={`absolute top-1/2 -translate-y-1/2 ${a.side} w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-105`}
             style={{
-              background: 'rgba(5,3,15,0.55)',
-              border: '1px solid rgba(109,179,212,0.35)',
-              color: '#6db3d4',
+              background: 'rgba(18,11,9,0.55)',
+              border: '1px solid rgba(230,194,122,0.35)',
+              color: '#e6c27a',
               backdropFilter: 'blur(8px)',
               WebkitBackdropFilter: 'blur(8px)',
             }}
@@ -158,9 +158,9 @@ export function InstrumentCarousel() {
               aria-pressed={active}
               className="px-3 py-1.5 rounded-lg text-sm italic transition-all duration-500"
               style={{
-                background: active ? 'rgba(123,79,168,0.28)' : 'rgba(74,127,168,0.10)',
-                border: `1px solid ${active ? 'rgba(192,132,252,0.55)' : 'rgba(74,127,168,0.22)'}`,
-                color: active ? '#f0d6f5' : '#6db3d4',
+                background: active ? 'rgba(184,84,46,0.28)' : 'rgba(201,138,75,0.10)',
+                border: `1px solid ${active ? 'rgba(240,160,90,0.55)' : 'rgba(201,138,75,0.22)'}`,
+                color: active ? '#f8e6cf' : '#e6c27a',
                 fontFamily: 'Cormorant Garamond, serif',
               }}
             >

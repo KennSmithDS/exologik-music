@@ -3,12 +3,14 @@
 // The Sound — album story up top, tabbed player below
 // Tabs: Support (Bandcamp) | Stream (Spotify) | Live (SoundCloud playlist)
 
-import Image from 'next/image'
 import { useState, type ReactElement } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
+import { ReleaseFeature } from './ReleaseFeature'
+import { YouTubeFeature } from './YouTubeFeature'
 
-const genres = ['Conscious Global Bass', 'Downtempo']
+const BAILE_URL = 'https://resueno.bandcamp.com/track/exologik-khem-reyall-baile-de-alkemia-ft-dto'
+const REINCARNATION_URL = 'https://exologik.bandcamp.com/album/reincarnation'
 
 const TABS = [
   { id: 'bandcamp',   label: 'Support',  eyebrow: 'Direct Support'    },
@@ -22,29 +24,29 @@ function BandcampTier() {
   return (
     <div className="flex flex-col items-center gap-6">
       <p className="text-center max-w-lg text-base sm:text-lg italic"
-        style={{ color: 'rgba(232,223,245,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
+        style={{ color: 'rgba(242,228,200,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
         Support the artist directly — every purchase goes straight to the source.
       </p>
       <div className="w-full max-w-xl flex flex-col gap-4">
         {[
           {
             label: 'Baile de Alkemia',
-            sublabel: 'Exologik & Khem Reyall ft. DTO — new on Resueno',
-            href: 'https://resueno.bandcamp.com/track/exologik-khem-reyall-baile-de-alkemia-ft-dto',
-            accent: '#f0a8d8',
+            sublabel: 'Exologik & Khem Reyall ft. DTO — new on Resueño',
+            href: BAILE_URL,
+            accent: '#f5b38a',
             badge: 'New Release',
           },
           {
             label: 'Reincarnation — Full Album',
             sublabel: 'The debut album — buy the full record directly from Exologik',
-            href: 'https://exologik.bandcamp.com/album/reincarnation',
-            accent: '#c084fc',
+            href: REINCARNATION_URL,
+            accent: '#f0a05a',
           },
           {
             label: 'Exologik on Bandcamp',
             sublabel: 'Browse every release and follow for new drops',
             href: 'https://exologik.bandcamp.com',
-            accent: '#6db3d4',
+            accent: '#e6c27a',
           },
         ].map(l => (
           <a
@@ -53,9 +55,9 @@ function BandcampTier() {
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center justify-between px-6 py-5 rounded-xl transition-all duration-300"
-            style={{ background: 'rgba(13,8,32,0.65)', border: '1px solid rgba(74,127,168,0.20)' }}
+            style={{ background: 'rgba(34,21,15,0.65)', border: '1px solid rgba(201,138,75,0.20)' }}
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = `${l.accent}55` }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(74,127,168,0.20)' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(201,138,75,0.20)' }}
           >
             <div>
               {'badge' in l && l.badge && (
@@ -64,9 +66,9 @@ function BandcampTier() {
                     fontFamily: 'Cinzel, serif',
                     fontSize: '0.6rem',
                     letterSpacing: '0.18em',
-                    color: '#f0a8d8',
-                    background: 'rgba(240,168,216,0.10)',
-                    border: '1px solid rgba(240,168,216,0.35)',
+                    color: '#f5b38a',
+                    background: 'rgba(245,179,138,0.10)',
+                    border: '1px solid rgba(245,179,138,0.35)',
                   }}>
                   {l.badge}
                 </span>
@@ -76,7 +78,7 @@ function BandcampTier() {
                 {l.label}
               </p>
               <p className="text-sm italic"
-                style={{ color: 'rgba(232,223,245,0.60)', fontFamily: 'Cormorant Garamond, serif' }}>
+                style={{ color: 'rgba(242,228,200,0.60)', fontFamily: 'Cormorant Garamond, serif' }}>
                 {l.sublabel}
               </p>
             </div>
@@ -93,11 +95,11 @@ function SpotifyTier() {
   return (
     <div className="flex flex-col items-center gap-6">
       <p className="text-center max-w-lg text-base sm:text-lg italic"
-        style={{ color: 'rgba(232,223,245,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
-        Stream <em>Reincarnation</em> everywhere — conscious global bass meets organic tribal house.
+        style={{ color: 'rgba(242,228,200,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
+        Stream <em>Reincarnation</em> everywhere — conscious global bass and downtempo.
       </p>
       <div className="w-full max-w-xl rounded-xl overflow-hidden"
-        style={{ background: 'rgba(13,8,32,0.6)', border: '1px solid rgba(74,127,168,0.18)' }}>
+        style={{ background: 'rgba(34,21,15,0.6)', border: '1px solid rgba(201,138,75,0.18)' }}>
         <iframe
           data-testid="embed-iframe"
           style={{ borderRadius: '12px', display: 'block' }}
@@ -115,7 +117,7 @@ function SpotifyTier() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm uppercase tracking-widest transition-colors duration-300 hover:text-white"
-        style={{ color: '#6db3d4', fontFamily: 'Cinzel, serif' }}
+        style={{ color: '#e6c27a', fontFamily: 'Cinzel, serif' }}
       >
         Open on Spotify →
       </a>
@@ -127,18 +129,18 @@ function SoundCloudTier() {
   return (
     <div className="flex flex-col items-center gap-6">
       <p className="text-center max-w-lg text-base sm:text-lg italic"
-        style={{ color: 'rgba(232,223,245,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
+        style={{ color: 'rgba(242,228,200,0.70)', fontFamily: 'Cormorant Garamond, serif' }}>
         Raw ceremony captured in the moment — live sets from festivals and ecstatic dance events.
       </p>
       <div className="w-full max-w-xl rounded-xl overflow-hidden"
-        style={{ border: '1px solid rgba(123,79,168,0.25)' }}>
+        style={{ border: '1px solid rgba(184,84,46,0.25)' }}>
         <iframe
           width="100%"
           height="450"
           scrolling="no"
           frameBorder="no"
           allow="autoplay"
-          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1925162471&color=%23a8709c&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1925162471&color=%23f0a05a&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
           loading="lazy"
         />
       </div>
@@ -147,10 +149,32 @@ function SoundCloudTier() {
         target="_blank"
         rel="noopener noreferrer"
         className="text-sm uppercase tracking-widest transition-colors duration-300 hover:text-white"
-        style={{ color: '#c084fc', fontFamily: 'Cinzel, serif' }}
+        style={{ color: '#f0a05a', fontFamily: 'Cinzel, serif' }}
       >
         Full Live Sets Playlist →
       </a>
+
+      <div className="w-full max-w-xl mt-6 pt-10 flex flex-col items-center gap-6"
+        style={{ borderTop: '1px solid rgba(184,84,46,0.18)' }}>
+        <p className="text-center text-xs uppercase tracking-[0.28em]"
+          style={{ color: 'rgba(230,194,122,0.6)', fontFamily: 'Cinzel, serif' }}>
+          On Video
+        </p>
+        <YouTubeFeature
+          videoId="R3_KIXIShyo"
+          title="Random Rab Downtempo Journey at HumanKind — Opening Set with Exologik, 10.9.2026"
+          caption="Opening for Random Rab — Downtempo Journey at HumanKind Center, Sedona · October 2026"
+        />
+        <a
+          href="https://www.youtube.com/@ExologikMusic"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm uppercase tracking-widest transition-colors duration-300 hover:text-white"
+          style={{ color: '#f0a05a', fontFamily: 'Cinzel, serif' }}
+        >
+          Exologik on YouTube →
+        </a>
+      </div>
     </div>
   )
 }
@@ -168,85 +192,58 @@ export function MusicSection() {
     <SectionWrapper id="music">
       {/* Ambient glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(74,127,168,0.06) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(201,138,75,0.06) 0%, transparent 70%)' }} />
 
       <div className="relative max-w-3xl mx-auto">
         <SectionHeading eyebrow="Music" title="The Sound" />
 
-        {/* ── Album story ── */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-          <div className="flex justify-center">
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{
-                boxShadow: '0 0 80px rgba(74,127,168,0.28), 0 0 30px rgba(123,79,168,0.18)',
-                border: '1px solid rgba(74,127,168,0.22)',
-              }}
-            >
-              <Image
-                src="/brand/reincarnation-album.png"
-                alt="Reincarnation — Exologik debut album, High Vibe Records 2025"
-                width={360}
-                height={360}
-                className="w-full max-w-[300px] sm:max-w-[340px] h-auto block"
-              />
-              <div
-                className="absolute bottom-0 left-0 right-0 px-4 py-3"
-                style={{ background: 'linear-gradient(to top, rgba(5,3,15,0.92), transparent)' }}
-              >
-                <p className="text-xs uppercase tracking-widest mb-0.5"
-                  style={{ color: '#6db3d4', fontFamily: 'Cinzel, serif' }}>
-                  Reincarnation
-                </p>
-                <p className="text-xs italic"
-                  style={{ color: 'rgba(232,223,245,0.50)', fontFamily: 'Cormorant Garamond, serif' }}>
-                  High Vibe Records · February 2025
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <p className="text-base sm:text-lg leading-relaxed mb-5"
-              style={{ color: 'rgba(232,223,245,0.75)', fontFamily: 'Cormorant Garamond, serif' }}>
-              <em>Reincarnation</em> — Exologik&rsquo;s debut full-length — weaves live handpan, flute,
-              charango, and voice into meticulously crafted soundscapes. Born from a transformative
-              winter solstice experience in 2023, it channels ancient resonance into modern form.
+        {/* ── Featured releases ── */}
+        <div className="flex flex-col gap-16 mb-16">
+          <ReleaseFeature
+            image="/brand/baile-de-alkemia.jpg"
+            alt="Baile de Alkemia cover art — a cacao pod and blossoms on black, Resueño Cacao Dance Vol. VI"
+            title="Baile de Alkemia"
+            meta="Resueño · Cacao Dance Vol. VI · 2026"
+            badge="New Release"
+            overlay={false}
+            href={BAILE_URL}
+            linkLabel="Get the track on Bandcamp →"
+            tags={['Tribal House', 'Deep Tribal', 'Slow House', 'Medicine Music']}
+          >
+            <p className="mb-4">
+              <em>Baile de Alkemia</em> — Exologik &amp; Khem Reyall ft. DTO — is a remembrance of the
+              Divine Feminine as an initiatory force: not changing him, but mirroring him. Through fire,
+              what&rsquo;s hidden comes to light, what&rsquo;s divided returns to union, and intimacy
+              becomes alchemy.
             </p>
-            <a
-              href="https://exologik.bandcamp.com/album/reincarnation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mb-5 text-sm uppercase tracking-widest transition-colors duration-300 hover:text-white"
-              style={{ color: '#c084fc', fontFamily: 'Cinzel, serif' }}
-            >
-              Get the album on Bandcamp →
-            </a>
-            <div className="flex flex-wrap gap-2">
-              {genres.map(g => (
-                <span
-                  key={g}
-                  className="px-3 py-1 rounded-full text-xs"
-                  style={{
-                    background: 'rgba(74,127,168,0.10)',
-                    border: '1px solid rgba(74,127,168,0.22)',
-                    color: '#6db3d4',
-                    fontFamily: 'Cinzel, serif',
-                    letterSpacing: '0.06em',
-                  }}
-                >
-                  {g}
-                </span>
-              ))}
-            </div>
-          </div>
+            <p style={{ color: 'rgba(242,228,200,0.60)' }}>
+              It began as a charango melody received in ceremony — and grew, with Khem Reyall&rsquo;s
+              lyrics and voice, into a dream come true on Resueño.
+            </p>
+          </ReleaseFeature>
+
+          <ReleaseFeature
+            image="/brand/reincarnation-album.png"
+            alt="Reincarnation — Exologik debut album, High Vibe Records 2025"
+            title="Reincarnation"
+            meta="High Vibe Records · February 2025"
+            href={REINCARNATION_URL}
+            linkLabel="Get the album on Bandcamp →"
+            tags={['Conscious Global Bass', 'Downtempo', 'Future Bass', 'Chillstep']}
+          >
+            <p>
+              <em>Reincarnation</em> — Exologik&rsquo;s debut full-length — weaves live handpan, flute,
+              and voice into meticulously crafted soundscapes. Born from a transformative winter
+              solstice experience in 2023, it channels ancient resonance into modern form.
+            </p>
+          </ReleaseFeature>
         </div>
 
         {/* ── Tabbed player ── */}
         <div className="flex justify-center mb-10">
           <div
             className="flex rounded-full p-1 gap-1"
-            style={{ background: 'rgba(13,8,32,0.7)', border: '1px solid rgba(74,127,168,0.2)' }}
+            style={{ background: 'rgba(34,21,15,0.7)', border: '1px solid rgba(201,138,75,0.2)' }}
           >
             {TABS.map(tab => (
               <button
@@ -255,14 +252,14 @@ export function MusicSection() {
                 className="relative px-5 py-2 rounded-full text-xs uppercase tracking-widest transition-colors duration-300"
                 style={{
                   fontFamily: 'Cinzel, serif',
-                  color: active === tab.id ? '#e8dff5' : 'rgba(232,223,245,0.4)',
+                  color: active === tab.id ? '#f2e4c8' : 'rgba(242,228,200,0.4)',
                 }}
               >
                 {active === tab.id && (
                   <motion.span
                     layoutId="tab-pill"
                     className="absolute inset-0 rounded-full"
-                    style={{ background: 'linear-gradient(135deg, rgba(74,127,168,0.35), rgba(123,79,168,0.35))' }}
+                    style={{ background: 'linear-gradient(135deg, rgba(201,138,75,0.35), rgba(184,84,46,0.35))' }}
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -274,7 +271,7 @@ export function MusicSection() {
 
         {/* Tab eyebrow */}
         <p className="text-center text-xs uppercase tracking-[0.28em] mb-8"
-          style={{ color: 'rgba(109,179,212,0.6)', fontFamily: 'Cinzel, serif' }}>
+          style={{ color: 'rgba(230,194,122,0.6)', fontFamily: 'Cinzel, serif' }}>
           {TABS.find(t => t.id === active)?.eyebrow}
         </p>
 

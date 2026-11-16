@@ -50,7 +50,7 @@ function ringOpacity(x: number, y: number): number {
 // Color by distance: inner → steel-blue, outer → cosmic-violet
 function ringColor(x: number, y: number): string {
   const d = Math.sqrt(x * x + y * y) / R
-  return d < 1.5 ? '74,127,168' : '123,79,168'
+  return d < 1.5 ? '201,138,75' : '184,84,46'
 }
 
 export function FlowerOfLife() {
@@ -77,9 +77,9 @@ export function FlowerOfLife() {
       >
         <defs>
           <radialGradient id="fol-bg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stopColor="#4a7fa8" stopOpacity="0.10" />
-            <stop offset="45%"  stopColor="#7b4fa8" stopOpacity="0.05" />
-            <stop offset="100%" stopColor="#05030f"  stopOpacity="0"   />
+            <stop offset="0%"   stopColor="#c98a4b" stopOpacity="0.10" />
+            <stop offset="45%"  stopColor="#b8542e" stopOpacity="0.05" />
+            <stop offset="100%" stopColor="#120b09"  stopOpacity="0"   />
           </radialGradient>
           {/* Clip to the bounding circle so outer arcs don't bleed */}
           <clipPath id="fol-clip">
@@ -94,7 +94,7 @@ export function FlowerOfLife() {
         <circle
           cx={CX} cy={CY} r={2.55 * R}
           fill="none"
-          stroke="rgba(74,127,168,0.10)"
+          stroke="rgba(201,138,75,0.10)"
           strokeWidth="0.6"
         />
 
@@ -158,7 +158,7 @@ export function FlowerOfLife() {
               y1={CY + len * Math.sin(rad)}
               x2={CX - len * Math.cos(rad)}
               y2={CY - len * Math.sin(rad)}
-              stroke="rgba(109,179,212,0.04)"
+              stroke="rgba(230,194,122,0.04)"
               strokeWidth="0.4"
             />
           )
@@ -166,7 +166,7 @@ export function FlowerOfLife() {
 
         {/* Center dot */}
         <circle cx={CX} cy={CY} r={1.5}
-          fill="rgba(109,179,212,0.35)" />
+          fill="rgba(230,194,122,0.35)" />
       </motion.svg>
     </motion.div>
   )

@@ -13,7 +13,7 @@ const NAV_ITEMS = [
 ]
 
 const linkStyle = {
-  color: 'rgba(109,179,212,0.80)',
+  color: 'rgba(230,194,122,0.80)',
   fontFamily: 'Cinzel, serif',
   letterSpacing: '0.13em',
   fontSize: '0.68rem',
@@ -29,7 +29,7 @@ export function NavBar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const navBg = scrolled ? 'rgba(5,3,15,0.90)' : 'rgba(5,3,15,0.50)'
+  const navBg = scrolled ? 'rgba(18,11,9,0.90)' : 'rgba(18,11,9,0.50)'
 
   return (
     <>
@@ -43,7 +43,7 @@ export function NavBar() {
           background: navBg,
           backdropFilter: 'blur(18px)',
           WebkitBackdropFilter: 'blur(18px)',
-          borderBottom: '1px solid rgba(74,127,168,0.18)',
+          borderBottom: '1px solid rgba(201,138,75,0.18)',
           transition: 'background 0.5s ease',
         }}
       >
@@ -54,7 +54,7 @@ export function NavBar() {
           onClick={() => setMenuOpen(false)}
         >
           <Image
-            src="/brand/logo-white.png"
+            src="/brand/logo-gold.png"
             alt="Exologik"
             width={110}
             height={32}
@@ -88,21 +88,21 @@ export function NavBar() {
           <span
             className="block w-5 h-px transition-all duration-300 origin-center"
             style={{
-              background: 'rgba(109,179,212,0.90)',
+              background: 'rgba(230,194,122,0.90)',
               transform: menuOpen ? 'rotate(45deg) translate(3.5px, 3.5px)' : 'none',
             }}
           />
           <span
             className="block w-5 h-px transition-all duration-300"
             style={{
-              background: 'rgba(109,179,212,0.90)',
+              background: 'rgba(230,194,122,0.90)',
               opacity: menuOpen ? 0 : 1,
             }}
           />
           <span
             className="block w-5 h-px transition-all duration-300 origin-center"
             style={{
-              background: 'rgba(109,179,212,0.90)',
+              background: 'rgba(230,194,122,0.90)',
               transform: menuOpen ? 'rotate(-45deg) translate(3.5px, -3.5px)' : 'none',
             }}
           />
@@ -119,10 +119,10 @@ export function NavBar() {
             transition={{ duration: 0.22 }}
             className="fixed top-14 left-0 right-0 z-40 md:hidden"
             style={{
-              background: 'rgba(5,3,15,0.97)',
+              background: 'rgba(18,11,9,0.97)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(74,127,168,0.20)',
+              borderBottom: '1px solid rgba(201,138,75,0.20)',
             }}
           >
             {NAV_ITEMS.map((item, i) => (
@@ -136,7 +136,7 @@ export function NavBar() {
                 style={{
                   ...linkStyle,
                   fontSize: '0.78rem',
-                  borderBottom: i < NAV_ITEMS.length - 1 ? '1px solid rgba(74,127,168,0.10)' : 'none',
+                  borderBottom: i < NAV_ITEMS.length - 1 ? '1px solid rgba(201,138,75,0.10)' : 'none',
                 }}
               >
                 {item.label}

@@ -1,6 +1,7 @@
 'use client'
 
 // Live Performances section — upcoming + scrollable past shows log
+import Image from 'next/image'
 import { SectionWrapper, SectionHeading } from './SectionWrapper'
 
 type Show = { date: string; event: string; venue?: string; location?: string; note?: string }
@@ -17,7 +18,7 @@ const PAST: Show[] = [
   { date: 'Sep 18, 2026',  event: 'Southwest Flow Festival',      note: 'Sunset set',                   venue: 'Gateway Ranch',        location: 'Flagstaff, AZ' },
   { date: 'Sep 12, 2026',  event: 'Unison Festival',              note: 'Featured performance with DTO on the beach stage', venue: 'Tico Time Resort', location: 'Aztec, NM' },
   { date: 'Sep 5, 2026',   event: 'Una Familia Sanctuary',        note: 'B2B with Sudakra', location: 'Taos, NM' },
-  { date: 'Aug 14, 2026',  event: 'Iceland Eclipse',              note: 'Sensory Chamber pop-up stage', location: 'Iceland' },
+  { date: 'Aug 14, 2026',  event: 'Iceland Eclipse',              note: 'Sensory Chamber pop-up stage', location: 'Hellissandur, Iceland' },
   { date: 'Jun 13, 2026',  event: 'June Jam',                     note: '3-hour set',                   venue: 'Playa Ponderosa',      location: 'Flagstaff, AZ' },
   { date: 'May 21, 2026',  event: 'Posse Ecstatic Dance',         venue: 'Posse Grounds Park',   location: 'Sedona, AZ' },
   { date: 'May 1, 2026',   event: 'The Mosaic Gathering',         venue: 'Gateway Ranch',        location: 'Flagstaff, AZ' },
@@ -48,12 +49,28 @@ export function ShowsSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
-        style={{ background: 'radial-gradient(ellipse 55% 45% at 50% 20%, rgba(74,127,168,0.06) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 55% 45% at 50% 20%, rgba(201,138,75,0.06) 0%, transparent 70%)' }}
       />
 
+      {/* Seated live portrait — dissolves into the page behind the heading and upcoming dates
+          (phones: faded banner behind the heading; desktop: left side, facing into the list) */}
+      <div
+        className="absolute top-0 left-0 w-full h-[560px] lg:w-[48%] lg:h-[980px] pointer-events-none select-none fade-portrait-side"
+        aria-hidden="true"
+      >
+        <Image
+          src="/photos/live-portrait.jpg"
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 46vw, 100vw"
+          className="object-cover opacity-25 lg:opacity-50"
+          style={{ objectPosition: '40% 8%' }}
+        />
+      </div>
+
       {/* Horizontal divider */}
-      <div className="max-w-4xl mx-auto mb-16">
-        <div className="w-full h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(74,127,168,0.3), transparent)' }} />
+      <div className="relative max-w-4xl mx-auto mb-16">
+        <div className="w-full h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(201,138,75,0.3), transparent)' }} />
       </div>
 
       <div className="relative max-w-4xl mx-auto">
@@ -63,7 +80,7 @@ export function ShowsSection() {
         <div className="mb-12">
           <p
             className="text-xs uppercase tracking-[0.22em] mb-6 text-center"
-            style={{ color: '#c084fc', fontFamily: 'Cinzel, serif' }}
+            style={{ color: '#f0a05a', fontFamily: 'Cinzel, serif' }}
           >
             Upcoming
           </p>
@@ -73,27 +90,27 @@ export function ShowsSection() {
                 key={show.date + show.event}
                 className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-4 px-5 py-4 rounded-xl"
                 style={{
-                  background: 'rgba(123,79,168,0.10)',
-                  border: '1px solid rgba(192,132,252,0.28)',
+                  background: 'rgba(184,84,46,0.10)',
+                  border: '1px solid rgba(240,160,90,0.28)',
                 }}
               >
                 <span
                   className="text-sm shrink-0"
-                  style={{ color: '#c084fc', fontFamily: 'Cinzel, serif', letterSpacing: '0.10em' }}
+                  style={{ color: '#f0a05a', fontFamily: 'Cinzel, serif', letterSpacing: '0.10em' }}
                 >
                   {show.date}
                 </span>
                 <span className="flex-1 flex flex-col">
                   <span
                     className="text-base font-medium"
-                    style={{ color: '#e8dff5', fontFamily: 'Cormorant Garamond, serif' }}
+                    style={{ color: '#f2e4c8', fontFamily: 'Cormorant Garamond, serif' }}
                   >
                     {show.event}
                   </span>
                   {show.note && (
                     <span
                       className="text-sm italic"
-                      style={{ color: '#f0a8d8', fontFamily: 'Cormorant Garamond, serif' }}
+                      style={{ color: '#f5b38a', fontFamily: 'Cormorant Garamond, serif' }}
                     >
                       {show.note}
                     </span>
@@ -101,7 +118,7 @@ export function ShowsSection() {
                 </span>
                 <span
                   className="text-sm"
-                  style={{ color: 'rgba(109,179,212,0.65)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
+                  style={{ color: 'rgba(230,194,122,0.65)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
                 >
                   {place(show)}
                 </span>
@@ -114,7 +131,7 @@ export function ShowsSection() {
         <div>
           <p
             className="text-xs uppercase tracking-[0.22em] mb-4 text-center"
-            style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}
+            style={{ color: '#c98a4b', fontFamily: 'Cinzel, serif' }}
           >
             Past Shows
           </p>
@@ -122,10 +139,10 @@ export function ShowsSection() {
             className="overflow-y-auto rounded-xl"
             style={{
               height: 340,
-              background: 'rgba(5,3,15,0.55)',
-              border: '1px solid rgba(74,127,168,0.15)',
+              background: 'rgba(18,11,9,0.55)',
+              border: '1px solid rgba(201,138,75,0.15)',
               scrollbarWidth: 'thin',
-              scrollbarColor: 'rgba(74,127,168,0.30) transparent',
+              scrollbarColor: 'rgba(201,138,75,0.30) transparent',
             }}
           >
             {PAST.map((show, i) => (
@@ -133,29 +150,29 @@ export function ShowsSection() {
                 key={show.date + show.event}
                 className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 px-5 py-3"
                 style={{
-                  borderBottom: i < PAST.length - 1 ? '1px solid rgba(74,127,168,0.08)' : 'none',
+                  borderBottom: i < PAST.length - 1 ? '1px solid rgba(201,138,75,0.08)' : 'none',
                 }}
               >
                 <span
                   className="text-xs shrink-0 w-28"
-                  style={{ color: 'rgba(109,179,212,0.55)', fontFamily: 'Cinzel, serif', letterSpacing: '0.08em' }}
+                  style={{ color: 'rgba(230,194,122,0.55)', fontFamily: 'Cinzel, serif', letterSpacing: '0.08em' }}
                 >
                   {show.date}
                 </span>
                 <span
                   className="text-base flex-1"
-                  style={{ color: 'rgba(232,223,245,0.80)', fontFamily: 'Cormorant Garamond, serif' }}
+                  style={{ color: 'rgba(242,228,200,0.80)', fontFamily: 'Cormorant Garamond, serif' }}
                 >
                   {show.event}
                   {show.note && (
-                    <span className="italic" style={{ color: 'rgba(240,168,216,0.80)' }}>
+                    <span className="italic" style={{ color: 'rgba(245,179,138,0.80)' }}>
                       {' '}— {show.note}
                     </span>
                   )}
                 </span>
                 <span
                   className="text-sm"
-                  style={{ color: 'rgba(109,179,212,0.45)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
+                  style={{ color: 'rgba(230,194,122,0.45)', fontFamily: 'Cormorant Garamond, serif', fontStyle: 'italic' }}
                 >
                   {place(show)}
                 </span>
@@ -172,9 +189,9 @@ export function ShowsSection() {
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 rounded-lg text-sm uppercase tracking-widest"
             style={{
-              background: 'linear-gradient(135deg, rgba(74,127,168,0.18), rgba(123,79,168,0.18))',
-              border: '1px solid rgba(109,179,212,0.30)',
-              color: '#6db3d4',
+              background: 'linear-gradient(135deg, rgba(201,138,75,0.18), rgba(184,84,46,0.18))',
+              border: '1px solid rgba(230,194,122,0.30)',
+              color: '#e6c27a',
               fontFamily: 'Cinzel, serif',
               letterSpacing: '0.14em',
             }}

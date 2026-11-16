@@ -8,9 +8,9 @@ import Image from 'next/image'
 const genres = ['Conscious Global Bass', 'Organic Tribal House', 'Downtempo']
 
 const platforms = [
-  { name: 'Spotify',   href: 'https://open.spotify.com/artist/58aevQpxVtabvVwIqy6XqI',   color: '#6db3d4' },
-  { name: 'Bandcamp',  href: 'https://exologik.bandcamp.com',                              color: '#c084fc' },
-  { name: 'YouTube',   href: 'https://www.youtube.com/@ExologikMusic',                     color: '#f0a8d8' },
+  { name: 'Spotify',   href: 'https://open.spotify.com/artist/58aevQpxVtabvVwIqy6XqI',   color: '#e6c27a' },
+  { name: 'Bandcamp',  href: 'https://exologik.bandcamp.com',                              color: '#f0a05a' },
+  { name: 'YouTube',   href: 'https://www.youtube.com/@ExologikMusic',                     color: '#f5b38a' },
 ]
 
 export function MusicProductionSection() {
@@ -18,7 +18,7 @@ export function MusicProductionSection() {
     <SectionWrapper id="production">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-        style={{ background: 'radial-gradient(ellipse 50% 50% at 70% 40%, rgba(74,127,168,0.07) 0%, transparent 70%)' }} />
+        style={{ background: 'radial-gradient(ellipse 50% 50% at 70% 40%, rgba(201,138,75,0.07) 0%, transparent 70%)' }} />
 
       <div className="relative max-w-4xl mx-auto">
         <SectionHeading eyebrow="Music Production" title="The Studio" />
@@ -29,8 +29,8 @@ export function MusicProductionSection() {
             <div
               className="relative rounded-2xl overflow-hidden"
               style={{
-                boxShadow: '0 0 80px rgba(74,127,168,0.30), 0 0 30px rgba(123,79,168,0.20)',
-                border: '1px solid rgba(74,127,168,0.25)',
+                boxShadow: '0 0 80px rgba(201,138,75,0.30), 0 0 30px rgba(184,84,46,0.20)',
+                border: '1px solid rgba(201,138,75,0.25)',
               }}
             >
               <Image
@@ -43,14 +43,14 @@ export function MusicProductionSection() {
               {/* Album overlay label */}
               <div
                 className="absolute bottom-0 left-0 right-0 px-4 py-3"
-                style={{ background: 'linear-gradient(to top, rgba(5,3,15,0.92), transparent)' }}
+                style={{ background: 'linear-gradient(to top, rgba(18,11,9,0.92), transparent)' }}
               >
                 <p className="text-xs uppercase tracking-widest mb-0.5"
-                  style={{ color: '#6db3d4', fontFamily: 'Cinzel, serif' }}>
+                  style={{ color: '#e6c27a', fontFamily: 'Cinzel, serif' }}>
                   Reincarnation
                 </p>
                 <p className="text-xs italic"
-                  style={{ color: 'rgba(232,223,245,0.5)', fontFamily: 'Cormorant Garamond, serif' }}>
+                  style={{ color: 'rgba(242,228,200,0.5)', fontFamily: 'Cormorant Garamond, serif' }}>
                   High Vibe Records · February 2025
                 </p>
               </div>
@@ -60,7 +60,7 @@ export function MusicProductionSection() {
           {/* Text */}
           <div>
             <p className="text-base sm:text-lg leading-relaxed mb-5"
-              style={{ color: 'rgba(232,223,245,0.75)', fontFamily: 'Cormorant Garamond, serif' }}>
+              style={{ color: 'rgba(242,228,200,0.75)', fontFamily: 'Cormorant Garamond, serif' }}>
               <em>Reincarnation</em> — Exologik&rsquo;s debut full-length — blends live handpan, flute,
               charango, and voice into meticulously produced landscapes. Rooted in the winter solstice
               experience of 2023, it channels transformation into waveform.
@@ -73,9 +73,9 @@ export function MusicProductionSection() {
                   key={g}
                   className="px-3 py-1 rounded-full text-xs"
                   style={{
-                    background: 'rgba(74,127,168,0.12)',
-                    border: '1px solid rgba(74,127,168,0.25)',
-                    color: '#6db3d4',
+                    background: 'rgba(201,138,75,0.12)',
+                    border: '1px solid rgba(201,138,75,0.25)',
+                    color: '#e6c27a',
                     fontFamily: 'Cinzel, serif',
                     letterSpacing: '0.06em',
                   }}
@@ -88,7 +88,7 @@ export function MusicProductionSection() {
             {/* Platform links */}
             <div className="flex flex-col gap-3">
               <p className="text-xs uppercase tracking-[0.24em] mb-1"
-                style={{ color: '#4a7fa8', fontFamily: 'Cinzel, serif' }}>
+                style={{ color: '#c98a4b', fontFamily: 'Cinzel, serif' }}>
                 Listen On
               </p>
               {platforms.map(p => (

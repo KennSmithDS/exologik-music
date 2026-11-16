@@ -17,13 +17,16 @@ Before writing any frontend code, **always invoke the frontend-design skill**. T
 
 **Read all files in `/brand_assets/` before making any color, font, or layout decisions.** The assets are the source of truth.
 
-- **Palette** (derived from album art `Reincarnation`):
-  - Base: near-black (`#05030f`) with deep indigo-violet midtones
-  - Primary accent: steel-blue / ice-blue (`#4a7fa8`, `#6db3d4`) — matches the embossed logo
-  - Secondary accent: cosmic violet / purple (`#7b4fa8`, `#c084fc`)
-  - Highlight: glowing lotus pink-white (`#f0a8d8`) used sparingly for sacred geometry accents
-  - **Avoid**: warm earth tones, green, orange, red — these are off-brand
-  - **Avoid**: pure white backgrounds, bright neon, flat corporate blue
+- **Palette — Sunset** (adopted Nov 2026, from the Posse Ecstatic Dance flyer and the Sedona sunset hero; replaces the earlier cosmic indigo/blue palette). Tokens live in `src/app/globals.css` (`--umber`, `--gold`, …) and `tailwind.config.ts` (`sunset.*`):
+  - Base: charred umber (`#120b09`), surfaces clay shadow (`#22150f`)
+  - Gold lettering (`#e6c27a`, gradient to `#f8dea0` / `#c98a4b`) — section headings (`.text-gold`), labels, links; matches the gold embossed logo
+  - Bronze (`#c98a4b`) — eyebrows, borders, hairlines
+  - Sunset ember (`#f0a05a`) — CTAs and button text
+  - Red rock terracotta (`#b8542e`) — secondary accent, button/tab fills at low opacity
+  - Dusk peach (`#f5b38a`) — sparing highlights (badges, "Played With" chips)
+  - Text: sandstone (`#f2e4c8`)
+  - Divider motif: gold hairline with a small diamond in the center (from the flyer)
+  - **Avoid**: green, cold blues/violets as accents, pure white backgrounds, bright neon
 
 - **Typography**:
   - The Exologik wordmark uses a custom ancient-script calligraphic style with diamond diacritics and sweeping terminals. Do NOT try to recreate this in CSS — use the provided logo assets.
@@ -40,7 +43,7 @@ Before writing any frontend code, **always invoke the frontend-design skill**. T
 ### Brand Assets Available in `/brand_assets/`
 | File | Use |
 |------|-----|
-| `exologik_logo_-_embossed.png` | Hero section, loading screen, og:image |
+| `exologik_logo_-_embossed.png` | Original steel-blue emboss; the site uses a gold-recolored copy at `public/brand/embossed-logo-gold-trim.png` (padding trimmed) for the hero |
 | `EXOLOGIK_-_Reincarnation_Album_Art_Distribution.png` | Music section feature, hero background blur layer |
 | `EXOLOGIK-logo-vector-white_v2.png` | Sticky nav, footer, light-on-dark placements |
 | `EXOLOGIK-logo-vector-black_v2.png` | Any rare light background context |
@@ -73,7 +76,7 @@ Always use the **white vector logo** for nav and footer. Use the **embossed logo
       src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2204387935&color=%23a8709c&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true">
     </iframe>
     ```
-    Note: the `color=%23a8709c` in the embed matches the cosmic violet brand palette — keep it.
+    Note: the live playlist embed uses `color=%23f0a05a` (sunset ember) to match the palette.
 - **Email Signup**: No platform connected yet. Build UI now, wire later. Use `mailto:exologikmusic@gmail.com` as fallback. Add `{/* TODO: Connect to ConvertKit or Mailchimp */}` at each form. Do NOT build a backend capture without explicit instruction.
 - **Deployment**: Vercel (via GitHub)
 
